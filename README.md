@@ -1,5 +1,5 @@
 # Offline2OnlineUUIDFix
-Minecraft 服务器打开正版验证时，正常情况下会导致原来的离线玩家数据丢失，本项目将解决这个问题。
+Minecraft 服务器打开正版验证时，正常情况下会导致原来的离线玩家数据丢失，本项目将解决这个问题。[Online2OfflineUUIDFix](https://github.com/yfy-dodo939/Online2OfflineUUIDFix)是此操作的逆向版本。
 ## 注意事项
 + 请把 exe 文件放在 Minecraft 服务器根目录下，在 Minecraft 服务器**关闭**的状态下运行
 + 程序涉及关键文件的操作，请按要求备份，如果用户没有备份造成了严重后果(所有玩家数据全部丢失)，作者**概不负责！**
