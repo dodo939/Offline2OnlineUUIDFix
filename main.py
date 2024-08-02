@@ -14,7 +14,7 @@ def get_uuid(user_name):
 
 
 def main():
-    with open("server.properties", "r") as f:
+    with open("server.properties", "r", encoding='utf-8') as f:
         config = f.read()
     level_name = re.search(r"level-name\s*=\s*(.+)", config).group(1).strip()
 
@@ -22,7 +22,7 @@ def main():
         f"使用之前请确保: \n  1. 良好的网络环境\n  2. 请备份以下文件或文件夹: \n    ops.json\n    usercache.json\n    whitelist.json\n    banned-players.json\n    {level_name}/advancements\n    {level_name}/playerdata\n    {level_name}/stats\n按 Enter 继续, 按 Ctrl+C 或者直接关闭窗口退出"
     )
 
-    with open("usercache.json", "r") as f:
+    with open("usercache.json", "r", encoding='utf-8') as f:
         users = f.read()
     online_uuids = []
     names = re.findall(r'"name":\s*"([^"]+)"', users)
@@ -36,7 +36,7 @@ def main():
         count += 1
 
     print("正在将 ops.json 中玩家 UUID 修改为正版...")
-    with open("ops.json", "r+") as f:
+    with open("ops.json", "r+", encoding='utf-8') as f:
         ops = f.read()
         for i in range(count):
             if online_uuids[i]:
@@ -46,7 +46,7 @@ def main():
         f.write(ops)
 
     print("正在将 banned-players.json 中玩家 UUID 修改为正版...")
-    with open("banned-players.json", "r+") as f:
+    with open("banned-players.json", "r+", encoding='utf-8') as f:
         bans = f.read()
         for i in range(count):
             if online_uuids[i]:
@@ -56,7 +56,7 @@ def main():
         f.write(bans)
 
     print("正在将 whitelist.json 中玩家 UUID 修改为正版...")
-    with open("whitelist.json", "r+") as f:
+    with open("whitelist.json", "r+", encoding='utf-8') as f:
         wls = f.read()
         for i in range(count):
             if online_uuids[i]:
@@ -66,7 +66,7 @@ def main():
         f.write(wls)
 
     print("正在将 usercache.json 中玩家 UUID 修改为正版...")
-    with open("usercache.json", "r+") as f:
+    with open("usercache.json", "r+", encoding='utf-8') as f:
         caches = f.read()
         for i in range(count):
             if online_uuids[i]:
